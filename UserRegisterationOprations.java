@@ -70,12 +70,15 @@ public class UserRegisterationOprations {
 
     //UC6= Rule2=Should have at least 1 Upper Case
     //UC7= Rule3= Should have at least 1 numeric number in the password
+    //UC8 = Rule 4 = Has exactly 1 Special Character
     public void validPassword() {
         System.out.print("Enter the Password: ");
         String pass = sc.nextLine();
         //String regex = "^[a-zA-Z]{8,}$"; //Rule 1
         //String regex = "^[A-Z]{1}[a-zA-Z]{7,}$"; //Rule 2
-        String regex = "^[a-zA-Z0-9]{8,}$"; //Rule 3
+        //String regex = "^[a-zA-Z0-9]{8,}$"; //Rule 3
+        String regex = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*#?&])[A-Za-z0-9@$!%*?&]{5,}$"; //Rule 4
+
 
         boolean checkValid = pass.matches(regex);
 
