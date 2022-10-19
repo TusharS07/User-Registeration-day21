@@ -65,5 +65,19 @@ public class UserRegisterationOprations {
         }
     }
 
+    //UC5= As a User need to follow pre -defined Password rules.
+    //Rule1= min 8 Characters
+    //
+    public void validPassword() {
+        System.out.print("Enter the Password Having Minimum 8 Character: ");
+        String pass = sc.nextLine();
+        String regex = "^[a-zA-Z]{8,}$";
+        boolean checkValid = pass.matches(regex);
 
+        if (checkValid) {
+            System.out.println("Entered Password is Valid.");
+        } else {
+            System.out.println("Entered Password is Invalid.");
+        }
+    }
 }
