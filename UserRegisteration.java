@@ -14,7 +14,7 @@ public class UserRegisteration {
         int ans;
         do {
             System.out.println("Enter Your Choice: ");
-            System.out.println("1: Validate name. \n0: Exit.");
+            System.out.println("1: Validate First Name. \n2: Validate Last Name.");
             choice = sc.nextInt();
 
             switch (choice) {
@@ -22,10 +22,14 @@ public class UserRegisteration {
                     operations.validFirstName();
                     break;
 
+                case 2:
+                    operations.validLastName();
+
                 default:
                     System.out.println("Please Choose Valid Option ");
                     break;
             }
+            System.out.println();
             System.out.println("If Continue Press 1");
             ans = sc.nextInt();
         } while (ans == 1);

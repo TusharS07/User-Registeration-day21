@@ -14,9 +14,24 @@ public class UserRegisterationOprations {
         boolean checkValid = name.matches(regex);
 
         if (checkValid) {
-            System.out.println("First name is Valid.");
+            System.out.println("Your First name is Valid.");
         } else {
-            System.out.println("First name is Invalid.");
+            System.out.println("Your First name is Invalid.");
+        }
+    }
+
+    //UC2:-As a User need to enter a valid Last Name
+    //Last name starts with Cap and has minimum 3 characters
+    public void validLastName() {
+        System.out.print("Enter Last Name: ");
+        String name = sc.next();
+        String regex = "^[A-Z]{1}[a-z]{2,}$";
+        boolean checkValid = name.matches(regex);
+
+        if (checkValid) {
+            System.out.println("Your Last name is Valid.");
+        } else {
+            System.out.println("Your Last name is Invalid.");
         }
     }
 
