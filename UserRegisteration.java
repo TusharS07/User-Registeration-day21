@@ -50,8 +50,10 @@ public class UserRegisteration {
             }
             System.out.println();
             System.out.println("If Continue Press '0' ");
-            System.out.println("If Continue Press '1' ");
+            System.out.println("If Exit Press '1' ");
             ans = sc.nextInt();
         } while (ans == 0);
+
+        System.out.println("----------------------------------------");
     }
 }
