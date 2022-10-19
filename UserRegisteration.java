@@ -14,7 +14,7 @@ public class UserRegisteration {
         int ans;
         do {
             System.out.println("Enter Your Choice: ");
-            System.out.println("1: Validate First Name. \n2: Validate Last Name.");
+            System.out.println("1: Validate First Name. \n2: Validate Last Name. \n3: Validate Email_Id. \n4: Validate Mobile Number.");
             choice = sc.nextInt();
 
             switch (choice) {
@@ -24,14 +24,23 @@ public class UserRegisteration {
 
                 case 2:
                     operations.validLastName();
+                    break;
+
+                case 3:
+                    operations.validEmail_Id();
+                    break;
+
+                case 4:
+                    operations.validMobileFormat();
+                    break;
 
                 default:
                     System.out.println("Please Choose Valid Option ");
                     break;
             }
             System.out.println();
-            System.out.println("If Continue Press 1");
+            System.out.println("If Continue Press '0' ");
             ans = sc.nextInt();
-        } while (ans == 1);
+        } while (ans == 0);
     }
 }
