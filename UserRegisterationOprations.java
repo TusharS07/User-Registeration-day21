@@ -67,11 +67,14 @@ public class UserRegisterationOprations {
 
     //UC5= As a User need to follow pre -defined Password rules.
     //Rule1= min 8 Characters
-    //
+
+    //UC6= Rule2=Should have at least 1 Upper Case
+    //UC7
     public void validPassword() {
-        System.out.print("Enter the Password Having Minimum 8 Character: ");
+        System.out.print("Enter the Password: ");
         String pass = sc.nextLine();
-        String regex = "^[a-zA-Z]{8,}$";
+        //String regex = "^[a-zA-Z]{8,}$"; //Rule 1
+        String regex = "^[A-Z]{1}[a-zA-Z]{7,}$"; ////Rule 2
         boolean checkValid = pass.matches(regex);
 
         if (checkValid) {
