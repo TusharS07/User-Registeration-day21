@@ -69,12 +69,14 @@ public class UserRegisterationOprations {
     //Rule1= min 8 Characters
 
     //UC6= Rule2=Should have at least 1 Upper Case
-    //UC7
+    //UC7= Rule3= Should have at least 1 numeric number in the password
     public void validPassword() {
         System.out.print("Enter the Password: ");
         String pass = sc.nextLine();
         //String regex = "^[a-zA-Z]{8,}$"; //Rule 1
-        String regex = "^[A-Z]{1}[a-zA-Z]{7,}$"; ////Rule 2
+        //String regex = "^[A-Z]{1}[a-zA-Z]{7,}$"; //Rule 2
+        String regex = "^[a-zA-Z0-9]{8,}$"; //Rule 3
+
         boolean checkValid = pass.matches(regex);
 
         if (checkValid) {
