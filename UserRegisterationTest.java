@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class UserRegisterationTest {
+    UserRegisterationOprations userRegisterationOprations = new UserRegisterationOprations();
 
     //UC10 = Write JUnit Test to validate the User Entry for First Name, Last Name, Email, Mobile, and Password.
     //- Write Junit Test for Happy as well as Sad test case.
@@ -15,41 +16,51 @@ public class UserRegisterationTest {
     //#**Test First Name Is Valid
     @Test
     public void checkFirstNameValid() {
-        UserRegisterationOprations userRegisterationOprations = new UserRegisterationOprations();
-        boolean valid = userRegisterationOprations.validFirstName("Tushar");
-        Assert.assertTrue(valid);
+        try {
+            Assert.assertTrue(userRegisterationOprations.validFirstName("Tushar"));
+        } catch (InvalidUserException e) {
+            System.out.println("Exception Occurs\n" + e);
+        }
     }
 
     //#**Test Last Name Is Valid
     @Test
     public void checkLastNameValid() {
-        UserRegisterationOprations userRegisterationOprations = new UserRegisterationOprations();
-        boolean valid = userRegisterationOprations.validLastName("Salunkhe");
-        Assert.assertTrue(valid);
+        try {
+            Assert.assertTrue(userRegisterationOprations.validLastName("Salunkhe"));
+        } catch (InvalidUserException e) {
+            System.out.println("Exception Occurs\n" + e);
+        }
     }
 
     //#**Test Email_Id is Valid
     @Test
     public void checkEmail_IdValid() {
-        UserRegisterationOprations userRegisterationOprations = new UserRegisterationOprations();
-        boolean valid = userRegisterationOprations.validEmail_Id("abc.xyz@bl.co.in");
-        Assert.assertTrue(valid);
+        try {
+            Assert.assertTrue(userRegisterationOprations.validEmail_Id("abc.xyz@bl.co.in"));
+        } catch (InvalidUserException e) {
+            System.out.println("Exception Occurs\n" + e);
+        }
     }
 
     //#**Test MobileNumber is Valid
     @Test
     public void checkMobile_NumberValid() {
-        UserRegisterationOprations userRegisterationOprations = new UserRegisterationOprations();
-        boolean valid = userRegisterationOprations.validMobileFormat("91 9919819801");
-        Assert.assertTrue(valid);
+        try {
+            Assert.assertTrue(userRegisterationOprations.validMobileFormat("91 9919819801"));
+        } catch (InvalidUserException e) {
+            System.out.println("Exception Occurs\n" + e);
+        }
     }
 
     //#**Test Password is Valid
     @Test
     public void checkPasswordValid() {
-        UserRegisterationOprations userRegisterationOprations = new UserRegisterationOprations();
-        boolean valid = userRegisterationOprations.validPassword("Tushar@12");
-        Assert.assertTrue(valid);
+        try {
+            Assert.assertTrue(userRegisterationOprations.validPassword("Tushar@12"));
+        } catch (InvalidUserException e) {
+            System.out.println("Exception Occurs\n" + e);
+        }
     }
 
 
@@ -57,43 +68,53 @@ public class UserRegisterationTest {
     //#**Test First Name Is Invalid
     @Test
     public void checkFirstNameInvalid() {
-        UserRegisterationOprations userRegisterationOprations = new UserRegisterationOprations();
-        boolean invalid = userRegisterationOprations.validFirstName("tushar");
-        Assert.assertFalse(invalid);
+        try {
+            Assert.assertFalse(userRegisterationOprations.validFirstName("tushar"));
+        } catch (InvalidUserException e) {
+            System.out.println("Exception Occurs\n" + e);
+        }
     }
-
     //#**Test Last Name Is Invalid
     @Test
     public void checkLastNameInvalid() {
-        UserRegisterationOprations userRegisterationOprations = new UserRegisterationOprations();
-        boolean invalid = userRegisterationOprations.validLastName("salunkhe");
-        Assert.assertFalse(invalid);
+        try {
+            Assert.assertFalse(userRegisterationOprations.validLastName("salunkhe"));
+        } catch (InvalidUserException e) {
+            System.out.println("Exception Occurs\n" + e);
+        }
     }
 
     //#**Test Email_Id is Invalid
     @Test
     public void checkEmail_IdInvalid() {
-        UserRegisterationOprations userRegisterationOprations = new UserRegisterationOprations();
-        boolean invalid = userRegisterationOprations.validEmail_Id(".abc.xyz@bl.co.in");
-        Assert.assertFalse(invalid);
+        try {
+            Assert.assertFalse(userRegisterationOprations.validEmail_Id(".abc.xyz@bl.co.in"));
+        } catch (InvalidUserException e) {
+            System.out.println("Exception Occurs\n" + e);
+        }
     }
 
     //#**Test MobileNumber is Invalid
     @Test
     public void checkMobile_NumberInvalid() {
-        UserRegisterationOprations userRegisterationOprations = new UserRegisterationOprations();
-        boolean invaild = userRegisterationOprations.validMobileFormat("91 928282");
-        Assert.assertFalse(invaild);
+        try {
+            Assert.assertFalse(userRegisterationOprations.validMobileFormat("91 928282"));
+        } catch (InvalidUserException e) {
+            System.out.println("Exception Occurs\n" + e);
+        }
     }
 
     //#**Test Password is Invalid
     @Test
     public void checkPasswordInvalid() {
-        UserRegisterationOprations userRegisterationOprations = new UserRegisterationOprations();
-        boolean invalid = userRegisterationOprations.validPassword("tushar@12");
-        Assert.assertFalse(invalid);
+        try {
+            Assert.assertFalse(userRegisterationOprations.validPassword("tushar@12"));
+        } catch (InvalidUserException e) {
+            System.out.println("Exception Occurs\n" + e);
+        }
     }
 
-
-
 }
+
+
+
