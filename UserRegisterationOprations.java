@@ -1,15 +1,11 @@
 package com.bridgelabz.userRegisteration;
 
-import java.util.Scanner;
+
 
 public class UserRegisterationOprations {
-    public static final Scanner sc = new Scanner(System.in);
-
     //UC1:-As a User need to enter a valid First Name
     //First name starts with Cap and has minimum 3 characters
-    public void validFirstName() {
-        System.out.print("Enter First Name: ");
-        String fname = sc.next();
+    public boolean validFirstName(String fname) {
         String regex = "^[A-Z]{1}[a-z]{2,}$";
         boolean checkValid = fname.matches(regex);
 
@@ -18,13 +14,12 @@ public class UserRegisterationOprations {
         } else {
             System.out.println("Your First name is Invalid.");
         }
+        return checkValid;
     }
 
     //UC2:-As a User need to enter a valid Last Name
     //Last name starts with Cap and has minimum 3 characters
-    public void validLastName() {
-        System.out.print("Enter Last Name: ");
-        String lname = sc.next();
+    public boolean validLastName(String lname) {
         String regex = "^[A-Z]{1}[a-z]{2,}$";
         boolean checkValid = lname.matches(regex);
 
@@ -33,13 +28,12 @@ public class UserRegisterationOprations {
         } else {
             System.out.println("Your Last name is Invalid.");
         }
+        return checkValid;
     }
 
     //UC3:-As a User need to enter a valid emailId
     //enter a valid email - E.g. abc.xyz@bl.co.in - Email has 3 mandatory parts (abc, bl & co) and 2 optional (xyz & in) with precise @ and . positions
-    public void validEmail_Id() {
-        System.out.print("Enter Email_ID: ");
-        String emailId = sc.next();
+    public boolean validEmail_Id(String emailId) {
         String regex = "^[a-zA-Z0-9]+([.][A-Za-z]+)*@[a-zA-Z]+[.]+[a-zA-Z]{2,3}+([.][A-Za-z]+)*$";
         boolean checkValid = emailId.matches(regex);
 
@@ -48,13 +42,12 @@ public class UserRegisterationOprations {
         } else {
             System.out.println("Your Email_ID is Invalid.");
         }
+        return checkValid;
     }
 
     //UC4:-As a User need to follow pre-defined Mobile Format
     //Mobile Format - E.g. 91 9919819801 - Country code follow by space and 10digit number
-    public void validMobileFormat() {
-        System.out.print("Enter Mobile Number: ");
-        String mobNo = sc.nextLine();
+    public boolean validMobileFormat(String mobNo) {
         String regex = "(91|0)?\\s?[6-9][0-9]{9}$";
         boolean checkValid = mobNo.matches(regex);
 
@@ -63,6 +56,7 @@ public class UserRegisterationOprations {
         } else {
             System.out.println("Your Mobile Number is Invalid.");
         }
+        return checkValid;
     }
 
     //UC5= As a User need to follow pre -defined Password rules.
@@ -71,9 +65,7 @@ public class UserRegisterationOprations {
     //UC6= Rule2=Should have at least 1 Upper Case
     //UC7= Rule3= Should have at least 1 numeric number in the password
     //UC8 = Rule 4 = Has exactly 1 Special Character
-    public void validPassword() {
-        System.out.print("Enter the Password: ");
-        String pass = sc.nextLine();
+    public boolean validPassword(String pass) {
         //String regex = "^[a-zA-Z]{8,}$"; //Rule 1
         //String regex = "^[A-Z]{1}[a-zA-Z]{7,}$"; //Rule 2
         //String regex = "^[a-zA-Z0-9]{8,}$"; //Rule 3
@@ -87,5 +79,6 @@ public class UserRegisterationOprations {
         } else {
             System.out.println("Entered Password is Invalid.");
         }
+        return checkValid;
     }
 }
